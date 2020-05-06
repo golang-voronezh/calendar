@@ -22,24 +22,26 @@
 
 ### Добавление события
 
-Создайте в папке events файл yyyy-mm-dd-event-name.yml.
+После создания форка репозитория создайте в папке events файл yyyy-mm-dd-event-name.yml.
 Отправьте пулреквест, открытый к правкам (галочка allow edits from maintainers).
 Файл можно создать прямо на Гитхабе: [create new file] и дальше в пулреквест.
 Название файла укажите латиницей, строчными и с дефисами вместо пробелов.
-Если событие длится больше одного дня, в названии файла укажите первый.
 Формат файла
 
 ```yaml
 name: event
-date: dd.mm.yyyy
-time: hh:mm-hh:mm
+from:
+  date: dd.mm.yyyy
+  time: hh:mm-hh:mm
+to:
+  date: dd.mm.yyyy
+  time: hh:mm-hh:mm
 city: city
 link: url
 online: true
 ```
 
-Многодневное событие? Добавьте дату завершения через дефис dd.mm.yyyy-dd.mm.yyyy.
-Короткое событие на несколько часов? Укажите время начала и конца, даже примерное: time: hh:mm-hh:mm.
+Укажите время начала и конца события примерное: time: hh:mm-hh:mm.
 Заканчиваете в полночь? Укажите время 23:59, чтобы не перейти на следующий день.
 Проводится онлайн? Добавьте online: true, это добавит подпись «онлайн» в название.
 Всегда добавляйте город (кириллицей), это помогает с часовым поясом события.
@@ -48,12 +50,12 @@ online: true
 
 ### Сборка событий
 
-```console
+```bash
 go build main # для сборки
 go test main # для тестирования
 ```
 
 ## Наше сообщество:
 
-- Сайт: [https://github.com/golang-voronezh/community]
-- Телеграмм: [https://t.me/golang\_vrn]
+- [Сайт](https://github.com/golang-voronezh/community)
+- [Телеграмм](https://t.me/golang_vrn)
